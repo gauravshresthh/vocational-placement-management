@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { Avatar } from "../ui/avatar";
 import { AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
 import {
@@ -16,7 +16,9 @@ import Search from "./search";
 const Header = () => {
   return (
     <div className="bg-white dark:bg-custom-black flex items-center justify-between px-8 py-4">
-      <Search />
+      <Suspense>
+        <Search />
+      </Suspense>
       <div className="flex flex-row gap-4 justify-center items-center">
         <Icon icon="BellRing" className="text-gray-400" />
         <Avatar>

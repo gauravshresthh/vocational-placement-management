@@ -15,7 +15,7 @@ export const CommonLayout = ({ children, sideBar }: CommonLayoutProps) => {
       <SideBar sideBar={sideBar} />
       <div className="flex flex-col min-h-screen bg-background dark:bg-custom-gray overflow-hidden">
         <Header />
-        <main className="h-[calc(100vh_-_80px)] overflow-y-auto bg-slate-200">
+        <main className="h-[calc(100vh_-_80px)] overflow-y-auto bg-lightgray">
           {children}
         </main>
       </div>

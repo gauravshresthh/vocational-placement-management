@@ -13,7 +13,7 @@ const AdminSideBar = () => {
           <Link
             key={data.label}
             href={data.route}
-            className={`p-4 ${isActive ? "bg-slate-200" : ""}`}
+            className={`p-4 ${isActive ? "bg-lightgray" : ""}`}
           >
             {data.label}
           </Link>
