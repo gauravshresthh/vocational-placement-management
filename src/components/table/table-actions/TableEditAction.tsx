@@ -11,13 +11,14 @@ export const TableEditAction = ({ actionContent }: TableEditActionProps) => {
 
   return (
     <>
-      <Icon
-        size="md"
-        icon="Pencil"
-        className="cursor-pointer"
+      <button
+        type="button"
+        className="w-full flex flex-row justify-start gap-3 items-center px-2 py-4"
         onClick={onOpen}
-      />
-
+      >
+        <Icon icon="Pencil" className="text-orange-600" />
+        Edit
+      </button>
       <Modal isOpen={isOpen} onOpenChange={onClose}>
         {actionContent}
       </Modal>

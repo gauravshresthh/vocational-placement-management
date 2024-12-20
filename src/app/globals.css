@@ -70,3 +70,10 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+.leaflet-popup-content-wrapper {
+  @apply rounded-none  border border-black w-[350px] !important;
+}
+.leaflet-popup-content-wrapper p {
+  @apply m-0 !important;
+}
