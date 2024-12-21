@@ -1,5 +1,5 @@
 /* eslint-disable no-nested-ternary */
-import { ChevronDown, ChevronsUpDown, ChevronUp, EyeOff } from "lucide-react";
+import { ChevronDown, ChevronsUpDown, ChevronUp } from "lucide-react";
 import QueryString from "qs";
 
 import { DataTableSortHeaderProps } from "../types";
@@ -84,7 +84,7 @@ export const DataTableSortHeader = <TData,>({
           <Button
             variant="unstyled"
             size="sm"
-            className="-ml-3 h-8 data-[state=open]:bg-accent"
+            className="-ml-3 h-8 text-gray-500  data-[state=open]:bg-accent"
           >
             {column.getIsSorted() === "desc" ||
             (isActive && sortParams[columnName] === "desc") ? (
@@ -141,7 +141,7 @@ export const DataTableSortHeader = <TData,>({
             Desc
           </DropdownMenuItem>
           <DropdownMenuSeparator />
-          <DropdownMenuItem
+          {/* <DropdownMenuItem
             onClick={() => {
               if (useTableFunctions) {
                 column.toggleVisibility(false);
@@ -150,7 +150,7 @@ export const DataTableSortHeader = <TData,>({
           >
             <EyeOff className="mr-2 h-3.5 w-3.5 text-muted-foreground/70" />
             Hide
-          </DropdownMenuItem>
+          </DropdownMenuItem> */}
         </DropdownMenuContent>
       </DropdownMenu>
     </div>

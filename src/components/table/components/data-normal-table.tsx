@@ -47,7 +47,7 @@ export const NormalTable = <TData,>({
                 <TableHead
                   className={cn(
                     [
-                      "text-left px-3 py-2 text-black text-sm font-semibold bg-[#FCFDFD] dark:text-[#FCFDFD]  dark:bg-custom-black first:rounded-tl-xl last:rounded-tr-xl",
+                      "text-left px-3 py-2 text-gray-500 text-sm font-normal bg-[#FCFDFD] dark:text-[#FCFDFD]  dark:bg-custom-black first:rounded-tl-xl last:rounded-tr-xl",
                     ],
                     {
                       "text-right": header.column.columnDef?.meta?.isNumeric,
@@ -72,12 +72,6 @@ export const NormalTable = <TData,>({
                       "justify-end": header.column.columnDef.meta?.isNumeric,
                     })}
                   >
-                    {header.isPlaceholder
-                      ? null
-                      : flexRender(
-                          header.column.columnDef.header,
-                          header.getContext()
-                        )}
                     {(() => {
                       if (
                         header.column.getCanFilter() &&
@@ -127,6 +121,12 @@ export const NormalTable = <TData,>({
 
                       return null;
                     })()}
+                    {header.isPlaceholder
+                      ? null
+                      : flexRender(
+                          header.column.columnDef.header,
+                          header.getContext()
+                        )}
                   </div>
                 </TableHead>
               );

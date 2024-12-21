@@ -118,10 +118,12 @@ const PrePlacementChart = () => {
             <div key={data.title} className="flex justify-between w-full py-2">
               <Typography variant={"p5"}>{data.title}</Typography>
               <div className="flex flex-row gap-2 w-1/5 justify-between  items-center">
-                <div
-                  className="h-4 w-4"
-                  style={{ backgroundColor: data.color }}
-                ></div>
+                <div>
+                  <div
+                    className="h-4 w-4"
+                    style={{ backgroundColor: data.color }}
+                  />
+                </div>
                 <Typography variant={"p5"}>{data.value}</Typography>
               </div>
             </div>

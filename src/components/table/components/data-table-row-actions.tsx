@@ -1,5 +1,5 @@
 /* eslint-disable no-nested-ternary */
-import { MoreHorizontal } from "lucide-react";
+import { MoreVertical } from "lucide-react";
 
 import type { TableActionMenuProps } from "../types";
 
@@ -43,7 +43,7 @@ export const TableActionMenu = ({
           variant="ghost"
           className="flex h-8 w-8 p-0 data-[state=open]:bg-muted"
         >
-          <MoreHorizontal className="h-4 w-4" />
+          <MoreVertical className="h-4 w-4" />
           <span className="sr-only">Open menu</span>
         </Button>
       )}
@@ -84,9 +84,8 @@ export const TableActionMenu = ({
 
           if (e?.content) {
             return (
-              <>
+              <Fragment key={e.label}>
                 <Can
-                  key={e.label}
                   I={e?.permission_action as string}
                   a={e?.permission_slug as string}
                   passThrough={!e?.permission_action && !e?.permission_slug}
@@ -94,12 +93,12 @@ export const TableActionMenu = ({
                   <Fragment key={String(e.content)}>{e.content}</Fragment>
                 </Can>
                 {index !== menuList.length - 1 && <DropdownMenuSeparator />}
-              </>
+              </Fragment>
             );
           }
           return (
             <Can
-              key={e?.label}
+              key={e.label}
               I={e?.permission_action as string}
               a={e?.permission_slug as string}
               passThrough={!e?.permission_action && !e?.permission_slug}
