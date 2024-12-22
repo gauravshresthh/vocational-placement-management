@@ -28,6 +28,7 @@ export const typographyVariants = cva("text-black", {
       p4: "text-base font-normal dark:text-white",
       p5: "text-sm font-normal dark:text-white",
       p6: "text-xs font-normal dark:text-white",
+      p7: "text-sm font-normal bg-grayprimary py-1 px-3 rounded-3xl dark:text-white",
       d1: "font-semibold text-6xl dark:text-white",
       d2: "font-semibold text-5xl dark:text-white",
     },

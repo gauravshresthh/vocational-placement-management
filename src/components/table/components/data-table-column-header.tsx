@@ -84,16 +84,16 @@ export const DataTableSortHeader = <TData,>({
           <Button
             variant="unstyled"
             size="sm"
-            className="-ml-3 h-8 text-gray-500  data-[state=open]:bg-accent"
+            className="h-8 px-0 text-gray-500  data-[state=open]:bg-accent"
           >
             {column.getIsSorted() === "desc" ||
             (isActive && sortParams[columnName] === "desc") ? (
-              <ChevronDown className="ml-2 h-4 w-4" />
+              <ChevronDown className=" h-4 w-4" />
             ) : column.getIsSorted() === "asc" ||
               (isActive && sortParams[columnName] === "asc") ? (
-              <ChevronUp className="ml-2 h-4 w-4 " />
+              <ChevronUp className=" h-4 w-4 " />
             ) : (
-              <ChevronsUpDown className="ml-2 h-4 w-4" />
+              <ChevronsUpDown className="h-4 w-4" />
             )}
           </Button>
         </DropdownMenuTrigger>
