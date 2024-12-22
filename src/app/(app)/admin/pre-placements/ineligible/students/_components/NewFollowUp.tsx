@@ -1,15 +1,19 @@
-import { Typography } from "@/components/ui/typography";
 import React from "react";
 import { RadioNav } from "./RadioNav";
+import { Typography } from "@/components/ui/typography";
+import { FollowUpHistory } from "./FollowUpHistory";
 
 const NewFollowUp = () => {
   return (
-    <div className="flex items-center gap-6">
-      <Typography variant="p4" className="font-bold">
-        New Follow up
-      </Typography>
+    <>
       <RadioNav />
-    </div>
+      <div className="border-t mt-4">
+        <Typography variant="p4" className="font-bold py-2">
+          Follow up History
+        </Typography>
+        <FollowUpHistory />
+      </div>
+    </>
   );
 };
 

@@ -29,8 +29,7 @@ export function FollowUp({ value, name }: { value: string; name: string }) {
           {name}
         </Button>
       </DrawerTrigger>
-      <DrawerContent className="w-1/3 mt-[70px]  rounded-none ">
-        {" "}
+      <DrawerContent className="w-1/3 mt-[70px]  rounded-none overflow-x-hidden min-h-0 flex-1">
         <DrawerHeader className=" p-6">
           <DrawerTitle className="mb-4 relative">
             <div className="flex flex-row gap-4 items-center">

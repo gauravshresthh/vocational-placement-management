@@ -17,6 +17,7 @@ export const followUpSchema = z.object({
   type: z.enum(["email", "call", "note"], {
     required_error: "You need to select a notification type.",
   }),
+  message: z.string().min(1, "Message field required."),
 });
 
 export type SelectFollowUp = z.infer<typeof followUpSchema>;

@@ -170,7 +170,7 @@ export const InelligibleStudentTable = () => {
         }}
         toolbarContent={() => (
           <>
-            <div className="w-full flex justify-between items-center px-2">
+            <div className="w-full flex justify-between items-center ">
               <Filter />
               <Search />
             </div>
