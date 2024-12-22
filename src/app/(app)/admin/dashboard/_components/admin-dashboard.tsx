@@ -9,6 +9,8 @@ import PostPlacementChart from "./post-placement-chart";
 import Link from "next/link";
 import { LogBookTable } from "./LogBookTable";
 import dynamic from "next/dynamic";
+import { FacilitatorWeekly } from "./WeeklySchedule";
+import { Card } from "@/components/ui/card";
 const MapWithLocations = dynamic(
   () => import("@/components/shared/MapWithLocation"),
   {
@@ -40,7 +42,6 @@ const AdminDashboard = () => {
           </div>
         </div>
         <div className="p-6 bg-white col-span-3">
-          {" "}
           <div className="flex justify-between items-center">
             <Typography variant={"h4"}>Post placements</Typography>
           </div>
@@ -55,8 +56,8 @@ const AdminDashboard = () => {
             <LogBookTable />
           </div>
         </div>
-        <div className="p-6 bg-white col-span-4 flex flex-col gap-6">
-          <div className="flex justify-between">
+        <div className=" bg-white col-span-4 ">
+          <div className="flex justify-between p-6">
             <Typography variant={"h4"}>On Going placements</Typography>
             <div className="flex flex-row gap-2 items-center">
               <Typography variant={"p4"}>Concern Cases</Typography>
@@ -66,6 +67,14 @@ const AdminDashboard = () => {
             </div>
           </div>
           <MapWithLocations locations={locations} />
+        </div>
+        <div className="col-span-2">
+          <Card>
+            <div className="p-6">
+              <Typography variant={"h4"}>Facilator weekly schedule</Typography>
+            </div>
+            <FacilitatorWeekly />
+          </Card>
         </div>
       </div>
     </div>

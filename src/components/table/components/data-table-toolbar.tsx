@@ -31,7 +31,7 @@ export const DataTableToolbar = <TData,>({
   return (
     <>
       <div className={cn(["flex items-center gap-4 flex-wrap"])}>
-        {(allowSearch || !isStatic) && (
+        {allowSearch && (
           <Input
             // endContent={<Icon size={'20px'} className='text-gray-500' icon='Search' />}
             container="w-[250px] rounded-md  "

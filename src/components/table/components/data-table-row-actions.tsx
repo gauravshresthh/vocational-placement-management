@@ -1,7 +1,6 @@
 /* eslint-disable no-nested-ternary */
 import { MoreVertical } from "lucide-react";
-
-import type { TableActionMenuProps } from "../types";
+import { Fragment } from "react";
 
 import {
   DropdownMenu as ShadcnDropdownMenu,
@@ -16,14 +15,14 @@ import {
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Fragment } from "react";
 
-// import { Icon, type IconProps } from "@/components/icon";
 import { Typography } from "@/components/ui/typography";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Icon, type IconProps } from "@/components/shared/icon";
 import { Can } from "@/components/ui/permission-wrapper";
+
+import type { TableActionMenuProps } from "../types";
 
 export const TableActionMenu = ({
   triggerClassName,
@@ -56,25 +55,26 @@ export const TableActionMenu = ({
         {menuList?.map((e, index) => {
           if (e.subMenuList && e.subMenuList.length > 0) {
             return (
-              <DropdownMenuSub key={e.label}>
+              <DropdownMenuSub key={e.label || index}>
                 <DropdownMenuSubTrigger>
                   <Typography variant="p4">{e.label}</Typography>
                 </DropdownMenuSubTrigger>
                 <DropdownMenuPortal>
                   <DropdownMenuSubContent>
                     {e.subMenuList.map((sm) => (
-                      <Can
-                        key={sm.label}
-                        I={sm?.permission_action as string}
-                        a={sm?.permission_slug as string}
-                        passThrough={
-                          !sm?.permission_action && !sm?.permission_slug
-                        }
-                      >
-                        <DropdownMenuItem onClick={sm.onClick && sm.onClick}>
-                          <Typography variant="p2">{sm.label}</Typography>
-                        </DropdownMenuItem>
-                      </Can>
+                      <Fragment key={sm.label || `${e.label}-${sm.label}`}>
+                        <Can
+                          I={sm?.permission_action as string}
+                          a={sm?.permission_slug as string}
+                          passThrough={
+                            !sm?.permission_action && !sm?.permission_slug
+                          }
+                        >
+                          <DropdownMenuItem onClick={sm.onClick && sm.onClick}>
+                            <Typography variant="p2">{sm.label}</Typography>
+                          </DropdownMenuItem>
+                        </Can>
+                      </Fragment>
                     ))}
                   </DropdownMenuSubContent>
                 </DropdownMenuPortal>
@@ -84,7 +84,7 @@ export const TableActionMenu = ({
 
           if (e?.content) {
             return (
-              <Fragment key={e.label}>
+              <Fragment key={e.label || index}>
                 <Can
                   I={e?.permission_action as string}
                   a={e?.permission_slug as string}
@@ -98,15 +98,12 @@ export const TableActionMenu = ({
           }
           return (
             <Can
-              key={e.label}
+              key={e.label || index}
               I={e?.permission_action as string}
               a={e?.permission_slug as string}
               passThrough={!e?.permission_action && !e?.permission_slug}
             >
-              <DropdownMenuItem
-                key={String(e)}
-                onClick={e.onClick && e.onClick}
-              >
+              <DropdownMenuItem onClick={e.onClick && e.onClick}>
                 <Typography
                   variant="p4"
                   className="flex flex-row items-center gap-4 w-full cursor-pointer px-1 py-[14px]"
