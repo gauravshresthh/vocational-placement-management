@@ -6,10 +6,11 @@ import { TableActionMenu } from "@/components/table/components/data-table-row-ac
 import { Table } from "@/components/table";
 import { users } from "../_data/UserData";
 import { UserAdmin } from "../_schema/UserSchema";
-import { TableEditAction } from "@/components/table/table-actions/TableEditAction";
+// import { TableEditAction } from "@/components/table/table-actions/TableEditAction";
 
 import TableName from "@/components/shared/TableName";
 import { Typography } from "@/components/ui/typography";
+import Link from "next/link";
 
 export const LogBookTable = () => {
   const columns = useMemo<ColumnDef<UserAdmin>[]>(
@@ -58,7 +59,18 @@ export const LogBookTable = () => {
         cell: () => (
           <TableActionMenu
             menuList={[
-              { content: <TableEditAction actionContent="asdfsdf" /> },
+              {
+                content: (
+                  <Link
+                    href="/"
+                    className="w-full flex flex-row justify-start gap-3 items-center px-1 py-[14px]"
+                  >
+                    {/* <Icon icon="SquarePen" /> */}
+                    Edit
+                  </Link>
+                ),
+              },
+              // { content: <TableEditAction actionContent="asdfsdf" /> },
             ]}
           />
         ),

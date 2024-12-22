@@ -151,9 +151,29 @@ export const DataTable = <TData,>({
         }
   );
 
+  // useEffect(() => {
+  //   // Ensure onSelection is called with the selected rows
+  //   if (onSelection) {
+  //     const selectedRows = Object.keys(rowSelection).map(
+  //       (key) => data[Number(key)]
+  //     );
+  //     onSelection(selectedRows.filter(Boolean) as TData[]);
+  //   }
+  // }, [onSelection, rowSelection, data]);
+
   useEffect(() => {
-    onSelection?.(table.getSelectedRowModel().rows.map((e) => e?.original));
-  }, [onSelection, table]);
+    if (onSelection) {
+      const selectedRows = Object.keys(rowSelection).map(
+        (key) => data[Number(key)]
+      );
+      onSelection(selectedRows);
+    }
+  }, [onSelection, rowSelection, data]);
+
+  // useEffect(() => {
+
+  //   onSelection?.(table.getSelectedRowModel().rows.map((e) => e?.original));
+  // }, [onSelection, table]);
 
   const isRowSelected = Object.values(rowSelection).length > 0;
   const showToolbar =
@@ -166,7 +186,7 @@ export const DataTable = <TData,>({
     showView ||
     toolbarContent;
   return (
-    <div className="flex flex-col gap-[50px]">
+    <div className="flex flex-col gap-6">
       {showToolbar && (
         <DataTableToolbar
           onRowDelete={() =>

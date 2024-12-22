@@ -8,7 +8,7 @@ const AdminSideBar = () => {
   return (
     <div className="flex flex-col  w-full">
       {routeData.map((data) => {
-        const isActive = pathname == data.route;
+        const isActive = pathname.includes(data.route);
         return (
           <Link
             key={data.label}
@@ -24,12 +24,12 @@ const AdminSideBar = () => {
 };
 const routeData = [
   { label: "Dashboard", route: "/admin/dashboard" },
-  { label: "Inbox", route: "/" },
-  { label: "Pre-Placements", route: "/" },
-  { label: "Ongoing Placements", route: "/" },
-  { label: "Post Placements", route: "/" },
-  { label: "Facilities", route: "/" },
-  { label: "Students", route: "/" },
-  { label: "Reports", route: "/" },
+  { label: "Inbox", route: "/test" },
+  { label: "Pre-Placements", route: "/admin/pre-placements" },
+  { label: "Ongoing Placements", route: "/test" },
+  { label: "Post Placements", route: "/test" },
+  { label: "Facilities", route: "/test" },
+  { label: "Students", route: "/test" },
+  { label: "Reports", route: "/test" },
 ];
 export default AdminSideBar;
