@@ -23,10 +23,10 @@ const Sidebar = () => {
   );
 };
 const routeData = [
-  { label: "Dashboard", route: "/admin/dashboard" },
-  { label: "Inbox", route: "/" },
-  { label: "Placements", route: "/" },
-  { label: "Profile", route: "/" },
-  { label: "Sign Out", route: "/" },
+  { label: "Dashboard", route: "/student/dashboard" },
+  { label: "Inbox", route: "/student" },
+  { label: "Placements", route: "/student/placements" },
+  { label: "Profile", route: "/student" },
+  { label: "Sign Out", route: "/student" },
 ];
 export default Sidebar;
