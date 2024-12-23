@@ -90,7 +90,7 @@ export const TableActionMenu = ({
                   a={e?.permission_slug as string}
                   passThrough={!e?.permission_action && !e?.permission_slug}
                 >
-                  <Fragment key={String(e.content)}>{e.content}</Fragment>
+                  {e.content}
                 </Can>
                 {index !== menuList.length - 1 && <DropdownMenuSeparator />}
               </Fragment>
