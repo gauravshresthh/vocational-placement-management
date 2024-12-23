@@ -56,7 +56,7 @@ export const DataTableColumnDateNumberFilter = <TData,>({
             compare: comperatorValue,
           },
         },
-        { allowDots: true, arrayFormat: "brackets", encode: false }
+        { allowDots: true, arrayFormat: "brackets", encode: false },
       );
       searchParams.delete("paginate");
       setSearchParams({ filter: queryString });
@@ -66,7 +66,7 @@ export const DataTableColumnDateNumberFilter = <TData,>({
         {
           ...parsedQuery,
         },
-        { allowDots: true, arrayFormat: "brackets", encode: false }
+        { allowDots: true, arrayFormat: "brackets", encode: false },
       );
       searchParams.delete("paginate");
       setSearchParams({ filter: queryString });

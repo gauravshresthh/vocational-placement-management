@@ -15,7 +15,7 @@ const MapWithLocations = dynamic(
   () => import("@/components/shared/MapWithLocation"),
   {
     ssr: false, // Disable SSR for this component
-  }
+  },
 );
 const AdminDashboard = () => {
   return (

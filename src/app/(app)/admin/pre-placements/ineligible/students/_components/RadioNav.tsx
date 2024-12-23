@@ -23,7 +23,7 @@ export function RadioNav() {
         message: "",
       },
     },
-    followUpSchema
+    followUpSchema,
   );
 
   const onSubmit = async (data: SelectFollowUp) => {

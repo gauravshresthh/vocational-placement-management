@@ -57,11 +57,14 @@ export const DataTable = <TData,>({
   const [sorting, setSorting] = useState<SortingState>([]);
   const [expanded, setExpanded] = useState<ExpandedState>(
     expandFirstLevel
-      ? Object.keys(data).reduce((result, index) => {
-          result[index] = true;
-          return result;
-        }, {} as Record<string, boolean>)
-      : {}
+      ? Object.keys(data).reduce(
+          (result, index) => {
+            result[index] = true;
+            return result;
+          },
+          {} as Record<string, boolean>,
+        )
+      : {},
   );
 
   const finalColumn = (
@@ -148,7 +151,7 @@ export const DataTable = <TData,>({
           manualPagination: true,
           globalFilterFn: fuzzyFilter,
           getExpandedRowModel: getExpandedRowModel(),
-        }
+        },
   );
 
   // useEffect(() => {
@@ -164,7 +167,7 @@ export const DataTable = <TData,>({
   useEffect(() => {
     if (onSelection) {
       const selectedRows = Object.keys(rowSelection).map(
-        (key) => data[Number(key)]
+        (key) => data[Number(key)],
       );
       onSelection(selectedRows);
     }
@@ -191,7 +194,7 @@ export const DataTable = <TData,>({
         <DataTableToolbar
           onRowDelete={() =>
             onRowDelete?.(
-              table.getSelectedRowModel().rows.map((e) => e?.original)
+              table.getSelectedRowModel().rows.map((e) => e?.original),
             )
           }
           showDownload={showDownload}

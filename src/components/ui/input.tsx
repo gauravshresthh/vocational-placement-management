@@ -14,7 +14,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
       <section
         className={cn(
           "w-full flex flex-row gap-2  items-center relative focus-within:bg-[#E3E3E3] bg-white dark:bg-input-gray border border-border  ",
-          container
+          container,
         )}
       >
         {startContent && (
@@ -29,14 +29,14 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
             {
               "pl-8": startContent,
             },
-            className
+            className,
           )}
           ref={ref}
           {...props}
         />
       </section>
     );
-  }
+  },
 );
 Input.displayName = "Input";
 

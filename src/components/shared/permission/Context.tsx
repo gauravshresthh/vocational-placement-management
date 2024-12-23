@@ -27,7 +27,7 @@ export function updateAbility(
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   ability: any,
   assignedPermision: string[],
-  isSuperAdmin?: boolean
+  isSuperAdmin?: boolean,
 ) {
   const { can, rules } = new AbilityBuilder(ability);
   if (isSuperAdmin) {

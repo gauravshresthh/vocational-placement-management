@@ -6,65 +6,65 @@ import {
   CircleIcon,
   HelpCircle,
   Timer,
-} from 'lucide-react';
+} from "lucide-react";
 
 export const labels = [
   {
-    value: 'bug',
-    label: 'Bug',
+    value: "bug",
+    label: "Bug",
   },
   {
-    value: 'feature',
-    label: 'Feature',
+    value: "feature",
+    label: "Feature",
   },
   {
-    value: 'documentation',
-    label: 'Documentation',
+    value: "documentation",
+    label: "Documentation",
   },
 ];
 
 export const statuses = [
   {
-    value: 'backlog',
-    label: 'Backlog',
+    value: "backlog",
+    label: "Backlog",
     icon: HelpCircle,
   },
   {
-    value: 'todo',
-    label: 'Todo',
+    value: "todo",
+    label: "Todo",
     icon: CircleIcon,
   },
   {
-    value: 'in progress',
-    label: 'In Progress',
+    value: "in progress",
+    label: "In Progress",
     icon: Timer,
   },
   {
-    value: 'done',
-    label: 'Done',
+    value: "done",
+    label: "Done",
     icon: CheckCircle,
   },
   {
-    value: 'canceled',
-    label: 'Canceled',
+    value: "canceled",
+    label: "Canceled",
     icon: HelpCircle,
   },
 ];
 
 export const priorities = [
   {
-    label: 'Low',
-    value: 'low',
+    label: "Low",
+    value: "low",
     icon: ArrowDownIcon,
   },
   {
-    label: 'Medium',
-    value: 'medium',
+    label: "Medium",
+    value: "medium",
     icon: ArrowRightIcon,
   },
   {
-    label: 'High',
-    value: 'high',
+    label: "High",
+    value: "high",
     icon: ArrowUpIcon,
   },
 ];

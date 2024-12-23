@@ -76,7 +76,7 @@ export const LogBookTable = () => {
         ),
       },
     ],
-    []
+    [],
   );
   const kycData = useMemo(() => {
     return users ?? [];

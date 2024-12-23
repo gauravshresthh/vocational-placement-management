@@ -29,7 +29,7 @@ export const InelligibleStudentTable = () => {
       setValue(value);
       viewState.onOpen();
     },
-    [viewState]
+    [viewState],
   );
   const columns = useMemo<ColumnDef<IneligibleData>[]>(
     () => [
@@ -198,7 +198,7 @@ export const InelligibleStudentTable = () => {
         ),
       },
     ],
-    [handleViewClick]
+    [handleViewClick],
   );
   const studentsData = useMemo(() => {
     return users ?? [];

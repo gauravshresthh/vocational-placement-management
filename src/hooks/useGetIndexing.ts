@@ -4,7 +4,7 @@ import { useSearchParams } from "./useSearchParams";
 export const useGetIndexing = () => {
   const { searchParams } = useSearchParams();
   const paginationParams = QueryString.parse(
-    searchParams?.get("paginate") as string
+    searchParams?.get("paginate") as string,
   );
   const getIndex = (index: number) => {
     const currentPage = paginationParams.page ?? 1;

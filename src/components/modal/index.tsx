@@ -79,8 +79,8 @@ export const Modal = ({
                   secondaryAction.className
                     ? secondaryAction.className
                     : classNames?.secondaryButton
-                    ? classNames.secondaryButton
-                    : ""
+                      ? classNames.secondaryButton
+                      : ""
                 }
               >
                 {secondaryAction.label}
@@ -94,8 +94,8 @@ export const Modal = ({
                   primaryAction.className
                     ? primaryAction.className
                     : classNames?.primaryButton
-                    ? classNames.primaryButton
-                    : ""
+                      ? classNames.primaryButton
+                      : ""
                 }
               >
                 {primaryAction.label}

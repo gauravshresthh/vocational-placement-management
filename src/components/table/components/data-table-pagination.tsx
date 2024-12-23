@@ -34,7 +34,7 @@ export const DataTablePagination = <TData,>({
   const { searchParams, setSearchParams } = useSearchParams();
   const paginationParams = useMemo(
     () => QueryString.parse(searchParams?.get("paginate") as string),
-    [searchParams]
+    [searchParams],
   );
   const limit = useTableFunctions
     ? table?.getState()?.pagination?.pageSize

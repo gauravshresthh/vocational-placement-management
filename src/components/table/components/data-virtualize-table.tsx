@@ -40,7 +40,7 @@ export const VirtualizeTable = <TData,>({
         ["rounded-md border h-[800px] overflow-y-auto", className],
         {
           // 'overflow-hidden': isLoading,
-        }
+        },
       )}
       ref={tableContainerRef}
       style={{
@@ -91,7 +91,7 @@ export const VirtualizeTable = <TData,>({
                         ? null
                         : flexRender(
                             header.column.columnDef.header,
-                            header.getContext()
+                            header.getContext(),
                           )}
                       {(() => {
                         if (

@@ -10,7 +10,7 @@ export function useSearchParams() {
   const searchParams = nextSearchParams();
 
   const urlSearchParams: URLSearchParams = new URLSearchParams(
-    Array.from(searchParams.entries())
+    Array.from(searchParams.entries()),
   );
 
   function setQueryParams(params: Record<string, unknown> | URLSearchParams) {

@@ -78,7 +78,7 @@ const componentVariantMapping: Record<TVariants, string> = {
 export const Typography = forwardRef(
   (
     { component, className, variant, children, ...props }: Props<TVariants>,
-    ref: React.ComponentPropsWithRef<React.ElementType>["ref"]
+    ref: React.ComponentPropsWithRef<React.ElementType>["ref"],
   ) => {
     const Component = component || "p";
 
@@ -92,13 +92,13 @@ export const Typography = forwardRef(
         {...props}
         ref={ref}
         className={cn(
-          typographyVariants({ variant: componentVariant, className })
+          typographyVariants({ variant: componentVariant, className }),
         )}
       >
         {children}
       </Component>
     );
-  }
+  },
 );
 
 Typography.displayName = "Typography";

@@ -55,7 +55,7 @@ export const NormalTable = <TData,>({
                         allowSelection && freezeFirstColumn,
                       "[&:nth-child(1)]:sticky [&:nth-child(1)]:left-0 bg-background ":
                         !allowSelection && freezeFirstColumn,
-                    }
+                    },
                   )}
                   style={{
                     width: header.column.columnDef?.meta?.width ?? "auto",
@@ -125,7 +125,7 @@ export const NormalTable = <TData,>({
                       ? null
                       : flexRender(
                           header.column.columnDef.header,
-                          header.getContext()
+                          header.getContext(),
                         )}
                   </div>
                 </TableHead>
@@ -192,7 +192,7 @@ export const NormalTable = <TData,>({
                         allowSelection && freezeFirstColumn,
                       "[&:nth-child(1)]:sticky [&:nth-child(1)]:left-0 bg-background ":
                         !allowSelection && freezeFirstColumn,
-                    }
+                    },
                   )}
                 >
                   {flexRender(cell.column.columnDef.cell, cell.getContext())}

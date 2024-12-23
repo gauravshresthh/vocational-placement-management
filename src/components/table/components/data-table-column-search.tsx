@@ -39,7 +39,7 @@ export const DataTableColumnSearch = <TData,>({
               column?.columnDef.meta?.filterOption?.comparator ?? "CONTAINS",
           },
         },
-        { allowDots: true, arrayFormat: "brackets", encode: false }
+        { allowDots: true, arrayFormat: "brackets", encode: false },
       );
       searchParams.delete("paginate");
       setSearchParams({ filter: queryString });
@@ -49,7 +49,7 @@ export const DataTableColumnSearch = <TData,>({
         {
           ...parsedQuery,
         },
-        { allowDots: true, arrayFormat: "brackets", encode: false }
+        { allowDots: true, arrayFormat: "brackets", encode: false },
       );
       searchParams.delete("paginate");
       setSearchParams({ filter: queryString });
