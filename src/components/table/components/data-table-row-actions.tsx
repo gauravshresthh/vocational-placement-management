@@ -55,14 +55,14 @@ export const TableActionMenu = ({
         {menuList?.map((e, index) => {
           if (e.subMenuList && e.subMenuList.length > 0) {
             return (
-              <DropdownMenuSub key={e.label || index}>
+              <DropdownMenuSub key={Math.random() + index}>
                 <DropdownMenuSubTrigger>
                   <Typography variant="p4">{e.label}</Typography>
                 </DropdownMenuSubTrigger>
                 <DropdownMenuPortal>
                   <DropdownMenuSubContent>
                     {e.subMenuList.map((sm) => (
-                      <Fragment key={sm.label || `${e.label}-${sm.label}`}>
+                      <Fragment key={Math.random() + index}>
                         <Can
                           I={sm?.permission_action as string}
                           a={sm?.permission_slug as string}
@@ -84,13 +84,13 @@ export const TableActionMenu = ({
 
           if (e?.content) {
             return (
-              <Fragment key={e.label || index}>
+              <Fragment key={Math.random() + index}>
                 <Can
                   I={e?.permission_action as string}
                   a={e?.permission_slug as string}
                   passThrough={!e?.permission_action && !e?.permission_slug}
                 >
-                  <Fragment key={String(e.content)}>{e.content}</Fragment>
+                  {e.content}
                 </Can>
                 {index !== menuList.length - 1 && <DropdownMenuSeparator />}
               </Fragment>
@@ -98,7 +98,7 @@ export const TableActionMenu = ({
           }
           return (
             <Can
-              key={e.label || index}
+              key={Math.random() + index}
               I={e?.permission_action as string}
               a={e?.permission_slug as string}
               passThrough={!e?.permission_action && !e?.permission_slug}

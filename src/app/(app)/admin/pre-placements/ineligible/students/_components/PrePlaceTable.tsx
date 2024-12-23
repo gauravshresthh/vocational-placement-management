@@ -17,9 +17,20 @@ import Search from "@/components/header/search";
 import { SendEmail } from "./SendEmail";
 import { Icon } from "@/components/shared/icon";
 import { FollowUp } from "./FollowUp";
+import { useDisclosure } from "@/hooks/useDisclosure";
 
 export const InelligibleStudentTable = () => {
   const [selectedData, setSelectedData] = useState<IneligibleData[]>([]);
+  const [value, setValue] = useState<string>("");
+  const viewState = useDisclosure();
+
+  const handleViewClick = useCallback(
+    ({ value }: { value: string }) => {
+      setValue(value);
+      viewState.onOpen();
+    },
+    [viewState]
+  );
   const columns = useMemo<ColumnDef<IneligibleData>[]>(
     () => [
       {
@@ -127,23 +138,67 @@ export const InelligibleStudentTable = () => {
           <TableActionMenu
             menuList={[
               {
-                content: <FollowUp value={"documents"} name="view" />,
+                content: (
+                  <button
+                    type="button"
+                    className="w-full flex flex-row justify-start gap-3 items-center p-2"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleViewClick({ value: "documents" });
+                    }}
+                  >
+                    View
+                  </button>
+                ),
               },
               {
-                content: <FollowUp value={"follow_up"} name="Send E-mail" />,
+                content: (
+                  <button
+                    type="button"
+                    className="w-full flex flex-row justify-start gap-3 items-center  p-2"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleViewClick({ value: "follow_up" });
+                    }}
+                  >
+                    Send Email
+                  </button>
+                ),
               },
               {
-                content: <FollowUp value={"follow_up"} name="Call Log" />,
+                content: (
+                  <button
+                    type="button"
+                    className="w-full flex flex-row justify-start gap-3 items-center  p-2"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleViewClick({ value: "follow_up" });
+                    }}
+                  >
+                    Call
+                  </button>
+                ),
               },
               {
-                content: <FollowUp value={"follow_up"} name="Notes" />,
+                content: (
+                  <button
+                    type="button"
+                    className="w-full flex flex-row justify-start gap-3 items-center  p-2"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleViewClick({ value: "follow_up" });
+                    }}
+                  >
+                    Notes
+                  </button>
+                ),
               },
             ]}
           />
         ),
       },
     ],
-    []
+    [handleViewClick]
   );
   const studentsData = useMemo(() => {
     return users ?? [];
@@ -170,7 +225,7 @@ export const InelligibleStudentTable = () => {
         }}
         toolbarContent={() => (
           <>
-            <div className="w-full flex justify-between items-center px-2">
+            <div className="w-full flex justify-between items-center ">
               <Filter />
               <Search />
             </div>
@@ -184,6 +239,12 @@ export const InelligibleStudentTable = () => {
             </div>
           </>
         )}
+      />
+      <FollowUp
+        isOpen={viewState.isOpen}
+        onToggle={viewState.onToggle}
+        onClose={viewState.onClose}
+        value={value}
       />
     </Suspense>
   );
