@@ -13,5 +13,5 @@ export const useForm = <T extends FieldValues>(
   resolverSchema:
     | ZodTypeAny
     | ZodObject<ZodRawShape>
-    | ZodEffects<ZodObject<ZodRawShape>>
+    | ZodEffects<ZodObject<ZodRawShape>>,
 ) => useRHF<T>({ ...options, resolver: zodResolver(resolverSchema) });

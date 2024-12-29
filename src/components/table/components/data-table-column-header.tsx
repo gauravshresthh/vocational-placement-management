@@ -50,7 +50,7 @@ export const DataTableSortHeader = <TData,>({
         {
           ...sortParams,
         },
-        { allowDots: true, arrayFormat: "brackets", encode: false }
+        { allowDots: true, arrayFormat: "brackets", encode: false },
       );
       setSearchParams({ sort: queryString });
     } else if (value === "asc") {
@@ -59,7 +59,7 @@ export const DataTableSortHeader = <TData,>({
           ...sortParams,
           [columnName]: value,
         },
-        { allowDots: true, arrayFormat: "brackets", encode: false }
+        { allowDots: true, arrayFormat: "brackets", encode: false },
       );
       searchParams.delete("paginate");
       setSearchParams({ sort: queryString });
@@ -69,7 +69,7 @@ export const DataTableSortHeader = <TData,>({
           ...sortParams,
           [columnName]: value,
         },
-        { allowDots: true, arrayFormat: "brackets", encode: false }
+        { allowDots: true, arrayFormat: "brackets", encode: false },
       );
       searchParams.delete("paginate");
       setSearchParams({ sort: queryString });

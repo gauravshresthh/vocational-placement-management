@@ -62,12 +62,12 @@ export const Error = ({
       {...(isPage
         ? {}
         : isCentered
-        ? {
-            display: "flex",
-            justifyContent: "center",
-            pt: "20vh",
-          }
-        : { pt: "120px", pl: "120px" })}
+          ? {
+              display: "flex",
+              justifyContent: "center",
+              pt: "20vh",
+            }
+          : { pt: "120px", pl: "120px" })}
     >
       <div
         className={`flex flex-col ${

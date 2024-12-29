@@ -54,7 +54,7 @@ export const DataTableListFilter = <TData,>({
               column?.columnDef.meta?.filterOption?.comparator ?? "CONTAINS",
           },
         },
-        { allowDots: true, arrayFormat: "brackets", encode: false }
+        { allowDots: true, arrayFormat: "brackets", encode: false },
       );
       searchParams.delete("paginate");
       setSearchParams({ filter: queryString });
@@ -64,7 +64,7 @@ export const DataTableListFilter = <TData,>({
         {
           ...parsedQuery,
         },
-        { allowDots: true, arrayFormat: "brackets", encode: false }
+        { allowDots: true, arrayFormat: "brackets", encode: false },
       );
       searchParams.delete("paginate");
       setSearchParams({ filter: queryString });
@@ -113,11 +113,11 @@ export const DataTableListFilter = <TData,>({
                           }
                           const filterValues = Array.from(selectedValues);
                           column?.setFilterValue(
-                            filterValues.length ? filterValues : undefined
+                            filterValues.length ? filterValues : undefined,
                           );
                         } else if (selectedData?.includes(option?.value)) {
                           setFilterParams(
-                            selectedData?.filter((e) => e !== option.value)
+                            selectedData?.filter((e) => e !== option.value),
                           );
                         } else {
                           setFilterParams([...selectedData, option.value]);
@@ -129,7 +129,7 @@ export const DataTableListFilter = <TData,>({
                           "mr-2 flex h-4 w-4 items-center justify-center rounded-sm border border-primary",
                           isSelected
                             ? "bg-primary text-primary-foreground"
-                            : "opacity-50 [&_svg]:invisible"
+                            : "opacity-50 [&_svg]:invisible",
                         )}
                       >
                         <Check className={cn("h-4 w-4")} />
