@@ -9,6 +9,7 @@ export default async function InelligibleLayout({
   return (
     <div className="bg-white">
       <InnerSubNav InnerSubNavData={innerSubNavData} />
+
       {children}
     </div>
   );

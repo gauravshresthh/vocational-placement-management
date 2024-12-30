@@ -15,9 +15,9 @@ import {
 import { Typography } from "@/components/ui/typography";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Icon } from "@/components/shared/icon";
-import { MoDalTab } from "./ModalNav";
+import { MoDalTab } from "@/app/(app)/admin/pre-placements/ineligible/students/_components/ModalNav";
 
-export function FollowUp({
+export function TableDrawer({
   value,
   isOpen,
   onClose,
@@ -30,7 +30,7 @@ export function FollowUp({
 }) {
   return (
     <Drawer open={isOpen} onOpenChange={onToggle}>
-      <DrawerContent className="w-1/3 mt-[70px]  rounded-none overflow-x-hidden min-h-0 flex-1">
+      <DrawerContent className="w-1/3 mt-[70px]  rounded-none overflow-x-hidden min-h-0 flex-1 scrollbar-hide">
         <div className="absolute top-0 right-0">
           <Button variant="unstyled" onClick={onClose}>
             <Icon
@@ -89,6 +89,10 @@ const studentData = [
   { label: "Placement date:", value: "04/22/2024" },
 ];
 const TabsHeader = [
+  {
+    title: "Assign",
+    value: "assign",
+  },
   {
     title: "Documents",
     value: "documents",

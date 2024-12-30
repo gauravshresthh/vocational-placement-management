@@ -47,7 +47,7 @@ export const TableActionMenu = ({
         </Button>
       )}
     </DropdownMenuTrigger>
-    <DropdownMenuContent className="w-24" side="left">
+    <DropdownMenuContent className="w-[250px]" side="left">
       {menuLabel && <DropdownMenuLabel>{menuLabel}</DropdownMenuLabel>}
       {menuLabel && <DropdownMenuSeparator />}
 

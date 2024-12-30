@@ -12,7 +12,7 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from "@/components/ui/drawer";
-import { IneligibleData } from "../_schema/UserSchema";
+import { IneligibleData } from "../../_schema/UserSchema";
 import { Typography } from "@/components/ui/typography";
 import { Icon } from "@/components/shared/icon";
 

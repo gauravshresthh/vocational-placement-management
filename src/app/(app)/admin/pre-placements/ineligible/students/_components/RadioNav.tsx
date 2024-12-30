@@ -10,7 +10,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { followUpSchema, type SelectFollowUp } from "../_schema/UserSchema";
+import { followUpSchema, type SelectFollowUp } from "../../_schema/UserSchema";
 import { useForm } from "@/hooks/useForm";
 import { Textarea } from "@/components/ui/textarea";
 import { Typography } from "@/components/ui/typography";

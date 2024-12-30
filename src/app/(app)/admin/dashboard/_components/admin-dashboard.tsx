@@ -117,4 +117,5 @@ const locations = [
     placement: 30,
   },
 ];
+
 export default AdminDashboard;
