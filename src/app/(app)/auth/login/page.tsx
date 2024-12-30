@@ -1,23 +1,22 @@
 /* eslint-disable react/no-unescaped-entities */
 // /app/auth/login/page.tsx
-'use client';
+"use client";
 
-import { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { useRouter } from 'next/navigation';
-import { AppDispatch, RootState } from '@/store/store';
-import { clearError, loginUser } from '@/store/slices/authSlice';
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useRouter } from "next/navigation";
+import { AppDispatch, RootState } from "@/store/store";
+import { clearError, loginUser } from "@/store/slices/authSlice";
 
 export default function Login() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const dispatch = useDispatch<AppDispatch>(); // Use the AppDispatch type here
   const router = useRouter();
 
-  
   // Get the auth state from Redux store
   const { isLoading, error, isAuthenticated } = useSelector(
-    (state: RootState) => state.auth
+    (state: RootState) => state.auth,
   );
 
   useEffect(() => {
@@ -27,7 +26,7 @@ export default function Login() {
       // Set a timer to clear the error after 10 seconds
       timer = setTimeout(() => {
         // Clear the error message (dispatch a Redux action if needed)
-        dispatch(clearError())
+        dispatch(clearError());
       }, 5000);
     }
 
@@ -36,7 +35,7 @@ export default function Login() {
 
   if (isAuthenticated) {
     // Redirect to dashboard if already authenticated
-    router.push('/student/dashboard');
+    router.push("/student/dashboard");
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -48,7 +47,9 @@ export default function Login() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
       <div className="w-full max-w-md bg-white p-8 rounded-lg shadow-lg">
-        <h2 className="text-2xl font-bold text-center text-gray-700 mb-6">Login</h2>
+        <h2 className="text-2xl font-bold text-center text-gray-700 mb-6">
+          Login
+        </h2>
 
         {error && (
           <div className="bg-red-500 text-white text-sm p-2 mb-4 rounded">
@@ -58,7 +59,10 @@ export default function Login() {
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-600">
+            <label
+              htmlFor="email"
+              className="block text-sm font-medium text-gray-600"
+            >
               Email
             </label>
             <input
@@ -72,7 +76,10 @@ export default function Login() {
           </div>
 
           <div>
-            <label htmlFor="password" className="block text-sm font-medium text-gray-600">
+            <label
+              htmlFor="password"
+              className="block text-sm font-medium text-gray-600"
+            >
               Password
             </label>
             <input
@@ -90,13 +97,16 @@ export default function Login() {
             disabled={isLoading}
             className="w-full py-3 mt-4 bg-indigo-600 text-white font-semibold rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
           >
-            {isLoading ? 'Logging in...' : 'Log in'}
+            {isLoading ? "Logging in..." : "Log in"}
           </button>
         </form>
 
         <p className="mt-4 text-center text-sm text-gray-600">
-          Don't have an account?{' '}
-          <a href="/auth/register" className="text-indigo-600 hover:text-indigo-800">
+          Don't have an account?{" "}
+          <a
+            href="/auth/register"
+            className="text-indigo-600 hover:text-indigo-800"
+          >
             Register here
           </a>
         </p>

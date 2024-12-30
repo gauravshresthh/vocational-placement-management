@@ -38,7 +38,7 @@ const InboxCard: React.FC<InboxCardProps> = ({
   message,
   date,
   time,
-  avatarSrc
+  avatarSrc,
 }) => {
   const randomBgColor = getRandomColor();
   const fallbackText = getFallbackText(name);

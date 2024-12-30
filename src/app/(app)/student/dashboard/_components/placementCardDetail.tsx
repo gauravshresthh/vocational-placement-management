@@ -12,11 +12,9 @@ type PlacementCardDetail = {
   details: Detail[];
 };
 
-const PlacementCardDetail: React.FC<PlacementCardDetail> = ({
-  details,
-}) => (
+const PlacementCardDetail: React.FC<PlacementCardDetail> = ({ details }) => (
   <>
-    {details.map(({id, label, value, statusColor }) => (
+    {details.map(({ id, label, value, statusColor }) => (
       <div key={id} className="flex py-2">
         <div className="w-1/2">
           <Typography variant="p4" className="font-bold text-[#444444]">

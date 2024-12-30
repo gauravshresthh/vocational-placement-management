@@ -278,7 +278,7 @@ const Placement = () => {
                     </div>
                   </TabsContent>
                   <TabsContent value="uploadDocuments">
-                  <div className="pl-5 pr-14">
+                    <div className="pl-5 pr-14">
                       <Typography variant={"p4"} className="font-bold">
                         Units Requirement
                       </Typography>

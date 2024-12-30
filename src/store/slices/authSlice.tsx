@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 // /src/redux/authSlice.ts
-'use client';
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { RootState } from '../store';
-import axiosInstance from '@/lib/axiosInstance';
+"use client";
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { RootState } from "../store";
+import axiosInstance from "@/lib/axiosInstance";
 
 interface AuthState {
   user: any;
@@ -35,27 +35,29 @@ interface LoginResponse {
 }
 
 // Create async thunk for login
-export const loginUser = createAsyncThunk<LoginResponse, LoginCredentials, { rejectValue: string }>(
-  'auth/loginUser',
-  async (credentials, { rejectWithValue }) => {
-    try {
-      const response = await axiosInstance.post('/auth/login', credentials);
+export const loginUser = createAsyncThunk<
+  LoginResponse,
+  LoginCredentials,
+  { rejectValue: string }
+>("auth/loginUser", async (credentials, { rejectWithValue }) => {
+  try {
+    const response = await axiosInstance.post("/auth/login", credentials);
 
-      // Extract token and user data
-      const { token, user } = response.data.data;
+    // Extract token and user data
+    const { token, user } = response.data.data;
 
-      return { token, user };
-    } catch (error: any) {
-      // Handle errors gracefully
-      const errorMessage = error.response?.data?.message || 'Something went wrong';
-      return rejectWithValue(errorMessage);
-    }
+    return { token, user };
+  } catch (error: any) {
+    // Handle errors gracefully
+    const errorMessage =
+      error.response?.data?.message || "Something went wrong";
+    return rejectWithValue(errorMessage);
   }
-);
+});
 
 // Create slice
 const authSlice = createSlice({
-  name: 'auth',
+  name: "auth",
   initialState,
   reducers: {
     logout: (state) => {
@@ -64,9 +66,9 @@ const authSlice = createSlice({
       state.isAuthenticated = false;
       state.error = null;
     },
-    clearError: (state)=> {
-      state.error = null
-    }
+    clearError: (state) => {
+      state.error = null;
+    },
   },
   extraReducers: (builder) => {
     builder
