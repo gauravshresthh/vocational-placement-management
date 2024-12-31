@@ -4,8 +4,8 @@ import { Suspense, useCallback, useMemo, useState } from "react";
 import type { ColumnDef } from "@tanstack/react-table";
 import { TableActionMenu } from "@/components/table/components/data-table-row-actions";
 import { Table } from "@/components/table";
-import { users } from "../_data/UserData";
-import { IneligibleData } from "../_schema/UserSchema";
+import { users } from "../../_data/UserData";
+import { IneligibleData } from "../../_schema/UserSchema";
 // import { TableEditAction } from "@/components/table/table-actions/TableEditAction";
 
 import TableName from "@/components/shared/TableName";
@@ -225,7 +225,7 @@ export const InelligibleStudentTable = () => {
         }}
         toolbarContent={() => (
           <>
-            <div className="w-full flex justify-between items-center ">
+            <div className="w-full flex justify-between items-center px-2">
               <Filter />
               <Search />
             </div>

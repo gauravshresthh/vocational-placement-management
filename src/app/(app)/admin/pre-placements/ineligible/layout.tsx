@@ -1,5 +1,5 @@
 import InnerSubNav from "../_components/InnerSubNav";
-import { innerSubNavData } from "./NavOption";
+import { innerSubNavData } from "./_data/NavOption";
 
 export default async function InelligibleLayout({
   children,

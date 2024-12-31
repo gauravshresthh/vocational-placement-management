@@ -9,8 +9,10 @@ export type IneligibleData = {
   approved: string;
   via: string;
   email_data: string;
+  submitted_date: string;
   message: string;
   placement_date: string;
+  submitted_documents: string[];
 };
 
 export const followUpSchema = z.object({

@@ -77,3 +77,11 @@ body {
 .leaflet-popup-content-wrapper p {
   @apply m-0 !important;
 }
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Hide the scrollbar in Chrome, Safari, and Edge */
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}

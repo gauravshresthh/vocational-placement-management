@@ -4,7 +4,7 @@ import StudentDashboard from "./_components/studentDashboard";
 const page = () => {
   return (
     <PageContainer>
-      <StudentDashboard/>
+      <StudentDashboard />
     </PageContainer>
   );
 };

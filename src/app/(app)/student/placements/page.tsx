@@ -1,13 +1,13 @@
-import { PageContainer } from '@/components/layout/page-container'
-import React from 'react'
-import Placement from './_components/placement'
+import { PageContainer } from "@/components/layout/page-container";
+import React from "react";
+import Placement from "./_components/placement";
 
 const page = () => {
   return (
     <PageContainer>
-        <Placement/>
+      <Placement />
     </PageContainer>
-  )
-}
+  );
+};
 
-export default page
+export default page;
