@@ -9,16 +9,16 @@ export const withAuthMiddleware = (middleware: CustomMiddleware) => {
   return async (
     request: NextRequest,
     event: NextFetchEvent,
-    response: NextResponse,
+    response: NextResponse
   ) => {
     const { value: token } = request.cookies.get("token") ?? {};
 
     const passThroughRoute = absoluteRoutes.find((route) =>
-      request.nextUrl.pathname.includes(route),
+      request.nextUrl.pathname.includes(route)
     );
     if (token) {
       if (passThroughRoute) {
-        return NextResponse.redirect(new URL("/", request.url).toString());
+        return NextResponse.redirect(new URL("/admin", request.url).toString());
       }
 
       return middleware(request, event, response);
@@ -26,7 +26,7 @@ export const withAuthMiddleware = (middleware: CustomMiddleware) => {
 
     if (!passThroughRoute) {
       return NextResponse.redirect(
-        new URL("/auth/login", request.url).toString(),
+        new URL("/auth/login", request.url).toString()
       );
     }
 
